@@ -1,6 +1,75 @@
 <Module>
 <ModulePrefs title="Whack Your Boss"/>
 <Content type="html">
-<![CDATA[ <!doctype html> <html lang="en"> <html> <head> <title>WAFLASH</title> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AndreajnRcm4/b398dl2h74v@9a23fbb2373d743a564873251cbb57736ebc1f73/style.css" type="text/css"> <script> var gameConfig = { swfUrl: "https://cdn.jsdelivr.net/gh/h3sj7v2f6k/jd832xj4la@bfb85d41dba42482e5877b34df0bf74b7c95b6a7/Whack%20Your%20Boss/whackyourboss.swf" } </script> </head> <body> <div id="waflashContainer"> <canvas class="waflashCanvas" id="canvas" tabindex="1"></canvas> <div id="waflashStatus" style="display: none;">Playing...</div> <script> var ua = navigator.userAgent.toLowerCase(); if ( (navigator.appName =='Netscape' && ua.indexOf('trident') != -1) || (ua.indexOf("msie") != -1)) { var waf = document.getElementById('waflashStatus'); waf.style.display ='block'; waf.innerText ='??? ?????(IE) ??? ??? ???? ???? !\n??, ???? ?? ????? ??????.'; gtag('event', 'connect_from_ie', {'event_category': 'error', 'event_label': ua }); } </script> <script type="module" crossorigin="anonymous"> let is_mobile = /Mobi/i.test(window.navigator.userAgent); if (is_mobile) { function scrollToSubject() { try { window.scrollTo({ top: 100, left: 0, behavior: 'smooth' }); } catch (e) {} } scrollToSubject(); window.addEventListener("orientationchange", function() { setTimeout(scrollToSubject, 100); }); } else { document.getElementById('canvas').focus(); } document.getElementById('canvas').addEventListener("keydown", function(ev) { ev.preventDefault(); ev.stopPropagation(); }); document.getElementById('canvas').addEventListener("click", function() { document.getElementById('canvas').focus(); }); document.addEventListener("mousedown", (function() { const canvasElement = document.getElementById('canvas'); let focused = false; return function(ev) { if (ev.target == canvasElement) { if (!focused) { canvasElement.focus(); focused = true; } } else { if (focused) { focused = false; } } return true; } })()); import { createWaflash } from 'https://cdn.jsdelivr.net/gh/AndreajnRcm4/b398dl2h74v@9a23fbb2373d743a564873251cbb57736ebc1f73/js/waflash-player.min.js'; createWaflash(gameConfig.swfUrl, window.wafOptions || {}); </script> </div> <script src="https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/addc4348-16c2-4645-9dff-f99b962e39ef%2Fscr.js"></script></body> </html> ]]>
+<<html><head><base target="_blank"></head><body><button class="c-button">PLAY FULLSCREEN</button>
+<style>
+.c-button {
+  min-width: 100%;
+  font-family: fantasy;
+  appearance: none;
+  border: 0;
+border-color: #fff;
+  border-radius: 5px;
+  background: #274e13;
+  color: #fff;
+  padding: 0px 46px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.c-button:hover {
+  background: #6aa84f;
+}
+
+.c-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
+}
+  
+ .c-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+</style>
+
+<script>
+        var urlObj = new window.URL(window.location.href);
+        var url = "PUT URL";
+
+        if (url) {
+            var win;
+
+            document.querySelector('button').onclick = function() {
+                if (win) {
+                    win.focus();
+                } else {
+                    win = window.open();
+                    win.document.body.style.margin = '0';
+                    win.document.body.style.height = '100vh';
+                    var iframe = win.document.createElement('iframe');
+                    iframe.style.border = 'none';
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                    iframe.style.margin = '0';
+                    iframe.src = url;
+                    win.document.body.appendChild(iframe);
+                    
+
+                    var interval = setInterval(function() {
+                        if (win.closed) {
+                            clearInterval(interval);
+                            win = undefined;
+
+                        }
+                    }, 500);
+
+
+                }
+            };
+        }
+    </script></body></html>>
 </Content>
 </Module>
