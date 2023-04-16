@@ -1,7 +1,4 @@
-<Module>
-<ModulePrefs title="Whack Your Boss"/>
-<Content type="html">
-<<html><head><base target="_blank"></head><body><button class="c-button">PLAY FULLSCREEN</button>
+<html><head><base target="_blank"></head><body><button class="c-button">PLAY FULLSCREEN</button>
 <style>
 .c-button {
   min-width: 100%;
@@ -70,6 +67,4 @@ border-color: #fff;
                 }
             };
         }
-    </script></body></html>>
-</Content>
-</Module>
+    </script></body></html>
